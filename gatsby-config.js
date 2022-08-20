@@ -9,7 +9,6 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: 'WontSleep',
-    image: 'default.jpg',
     description: 'An app for those who had a coffee',
     author: '@akedemos',
     siteUrl: 'https://capable-gaufre-0b80e4.netlify.app'
