@@ -57,7 +57,6 @@ function SignUp () {
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <Field
-
                     component={RFTextField}
                     disabled={submitting || sent}
                     autoComplete='given-name'

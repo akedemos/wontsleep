@@ -52,7 +52,6 @@ function ForgotPassword () {
           {({ handleSubmit: handleSubmit2, submitting }) => (
             <Box component='form' onSubmit={handleSubmit2} noValidate sx={{ mt: 6 }}>
               <Field
-
                 autoComplete='email'
                 component={RFTextField}
                 disabled={submitting || sent}
@@ -70,7 +69,7 @@ function ForgotPassword () {
                       <FormFeedback error sx={{ mt: 2 }}>
                         {submitError}
                       </FormFeedback>
-                      )
+                    )
                     : null}
               </FormSpy>
               <FormButton
