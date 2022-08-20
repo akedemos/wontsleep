@@ -27,17 +27,20 @@ function AppBar (props) {
               color='inherit'
               variant='h6'
               underline='none'
-              href='/sign-in/'
+              to='/sign-in'
+              sx={{ mx: 1 }}
             >
               Sign In
             </Link>
             <Link
               component={GatsbyLink}
+              color='inherit'
               variant='h6'
               underline='none'
-              href='/sign-up/'
+              to='/album'
+              sx={{ mx: 1 }}
             >
-              Sign Up
+              Album
             </Link>
           </Box>
         </Toolbar>

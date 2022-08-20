@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 const path = require('path')
+console.log(process.env.FIREBASE_API_KEY)
 
 module.exports = {
   /* Your site config here */
@@ -51,15 +52,15 @@ module.exports = {
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-netlify-cms',
     {
-      resolve: 'gatsby-plugin-firebase',
+      resolve: 'gatsby-plugin-firebase-v9.0',
       options: {
         credentials: {
-          apiKey: 'AIzaSyCI-tkrWLe0it3HduYign1LgH5ffSB30LU',
-          authDomain: 'wontsleep-967aa.firebaseapp.com',
-          projectId: 'wontsleep-967aa',
-          storageBucket: 'wontsleep-967aa.appspot.com',
-          messagingSenderId: '257671066613',
-          appId: '1:257671066613:web:1477042eef75b6abec66bc'
+          apiKey: process.env.FIREBASE_API_KEY,
+          authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+          projectId: process.env.FIREBASE_PROJECT_ID,
+          storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+          messagingSenderId: process.env.FIREBASE_MSG_SENDER_ID,
+          appId: process.env.FIREBASE_APP_ID
         }
       }
     }
