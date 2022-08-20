@@ -1,4 +1,4 @@
-import { createTheme, adaptV4Theme } from '@mui/material/styles';
+import { createTheme, adaptV4Theme } from '@mui/material/styles'
 import { green, grey, red } from '@mui/material/colors'
 
 const rawTheme = createTheme(adaptV4Theme({

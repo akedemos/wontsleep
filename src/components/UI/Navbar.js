@@ -147,7 +147,8 @@ export default function Navbar () {
           className={classes.drawerIconCtr}
           onClick={() => setOpenDrawer(!openDrawer)}
           disableRipple
-          size="large">
+          size='large'
+        >
           <MenuIcon style={{ color: theme.palette.secondary.light }} />
         </IconButton>
       </div>

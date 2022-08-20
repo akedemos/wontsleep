@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles'
 import 'normalize.css'
 
 import Theme from './Theme'
@@ -15,5 +15,5 @@ export default function Layout ({ children }) {
         <Footer />
       </ThemeProvider>
     </StyledEngineProvider>
-  );
+  )
 }

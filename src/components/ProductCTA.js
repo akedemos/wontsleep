@@ -117,7 +117,7 @@ function ProductCTA (props) {
         message='We will send you our best offers, once a week.'
       />
     </Container>
-  );
+  )
 }
 
 ProductCTA.propTypes = {

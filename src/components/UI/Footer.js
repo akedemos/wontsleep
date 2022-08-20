@@ -186,5 +186,5 @@ export default function Footer () {
         </Grid>
       </Container>
     </Typography>
-  );
+  )
 }
