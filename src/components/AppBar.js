@@ -16,7 +16,7 @@ function AppBar (props) {
             variant='h6'
             underline='none'
             color='inherit'
-            href='/'
+            to='/'
             sx={{ fontSize: 24 }}
           >
             {title}
