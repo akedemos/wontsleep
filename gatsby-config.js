@@ -8,12 +8,11 @@ const path = require('path')
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'Gatsby Material-UI Starter',
-    titleTemplate: 'OneSnappy | %s',
+    title: 'WontSleep',
     image: 'default.jpg',
-    description: 'Gatsby/Material-UI Template via SnappyWebDesign.net',
-    author: '@snappy_web',
-    siteUrl: 'https://muitemplate.netlify.app'
+    description: 'An app for those who had a coffee',
+    author: '@akedemos',
+    siteUrl: 'https://capable-gaufre-0b80e4.netlify.app'
   },
 
   plugins: [
