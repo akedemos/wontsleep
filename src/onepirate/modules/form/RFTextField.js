@@ -1,16 +1,16 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react'
+import PropTypes from 'prop-types'
 
-import TextField from '../components/TextField';
+import TextField from '../components/TextField'
 
-function RFTextField(props) {
+function RFTextField (props) {
   const {
     autoComplete,
     input,
     InputProps,
     meta: { touched, error, submitError },
     ...other
-  } = props;
+  } = props
 
   return (
     <TextField
@@ -19,14 +19,14 @@ function RFTextField(props) {
       {...other}
       InputProps={{
         inputProps: {
-          autoComplete,
+          autoComplete
         },
-        ...InputProps,
+        ...InputProps
       }}
       helperText={touched ? error || submitError : ''}
-      variant="standard"
+      variant='standard'
     />
-  );
+  )
 }
 
 RFTextField.propTypes = {
@@ -44,7 +44,7 @@ RFTextField.propTypes = {
     onChange: PropTypes.func.isRequired,
     onFocus: PropTypes.func.isRequired,
     type: PropTypes.string,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired
   }).isRequired,
   /**
    * Props applied to the Input element.
@@ -72,8 +72,8 @@ RFTextField.propTypes = {
     touched: PropTypes.bool,
     valid: PropTypes.bool,
     validating: PropTypes.bool,
-    visited: PropTypes.bool,
-  }).isRequired,
-};
+    visited: PropTypes.bool
+  }).isRequired
+}
 
-export default RFTextField;
+export default RFTextField

@@ -1,12 +1,12 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { styled } from '@mui/material/styles';
-import MuiSnackbar from '@mui/material/Snackbar';
-import { snackbarContentClasses } from '@mui/material/SnackbarContent';
-import Slide from '@mui/material/Slide';
-import CloseIcon from '@mui/icons-material/Close';
-import InfoIcon from '@mui/icons-material/Info';
-import IconButton from '@mui/material/IconButton';
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import { styled } from '@mui/material/styles'
+import MuiSnackbar from '@mui/material/Snackbar'
+import { snackbarContentClasses } from '@mui/material/SnackbarContent'
+import Slide from '@mui/material/Slide'
+import CloseIcon from '@mui/icons-material/Close'
+import InfoIcon from '@mui/icons-material/Info'
+import IconButton from '@mui/material/IconButton'
 
 const styles = ({ theme }) => ({
   [`& .${snackbarContentClasses.root}`]: {
@@ -17,36 +17,36 @@ const styles = ({ theme }) => ({
       borderTopLeftRadius: 0,
       borderTopRightRadius: 0,
       borderBottomRightRadius: 4,
-      borderBottomLeftRadius: 4,
-    },
+      borderBottomLeftRadius: 4
+    }
   },
   [`& .${snackbarContentClasses.message}`]: {
     fontSize: 16,
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   [`& .${snackbarContentClasses.action}`]: {
-    paddingLeft: theme.spacing(2),
+    paddingLeft: theme.spacing(2)
   },
   '& .MuiSnackbarContent-info': {
     flexShrink: 0,
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   '& .MuiSnackbarContent-close': {
-    padding: theme.spacing(1),
-  },
-});
+    padding: theme.spacing(1)
+  }
+})
 
-function Transition(props) {
-  return <Slide {...props} direction="down" />;
+function Transition (props) {
+  return <Slide {...props} direction='down' />
 }
 
-function Snackbar(props) {
-  const { message, closeFunc, ...other } = props;
+function Snackbar (props) {
+  const { message, closeFunc, ...other } = props
   const classes = {
     info: 'MuiSnackbarContent-info',
-    close: 'MuiSnackbarContent-close',
-  };
+    close: 'MuiSnackbarContent-close'
+  }
 
   return (
     <MuiSnackbar
@@ -54,25 +54,25 @@ function Snackbar(props) {
       autoHideDuration={6000}
       TransitionComponent={Transition}
       message={
-        <React.Fragment>
+        <>
           <InfoIcon className={classes.info} />
           <span>{message}</span>
-        </React.Fragment>
+        </>
       }
       action={[
         <IconButton
-          key="close"
-          aria-label="close"
-          color="inherit"
+          key='close'
+          aria-label='close'
+          color='inherit'
           className={classes.close}
           onClick={() => closeFunc && closeFunc()}
         >
           <CloseIcon />
-        </IconButton>,
+        </IconButton>
       ]}
       {...other}
     />
-  );
+  )
 }
 
 Snackbar.propTypes = {
@@ -80,7 +80,7 @@ Snackbar.propTypes = {
   /**
    * The message to display.
    */
-  message: PropTypes.node,
-};
+  message: PropTypes.node
+}
 
-export default styled(Snackbar)(styles);
+export default styled(Snackbar)(styles)
