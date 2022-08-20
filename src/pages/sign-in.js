@@ -60,7 +60,7 @@ function SignIn () {
             <Box component='form' onSubmit={handleSubmit2} noValidate sx={{ mt: 6 }}>
               <Field
                 autoComplete='email'
-                autoFocus
+
                 component={RFTextField}
                 disabled={submitting || sent}
                 fullWidth

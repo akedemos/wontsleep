@@ -1,10 +1,10 @@
-import * as React from 'react'
 import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
-import Container from '@mui/material/Container'
-import Typography from '../components/Typography'
+import * as React from 'react'
 import TextField from '../components/TextField'
+import Typography from '../components/Typography'
 
 function Copyright () {
   return (
@@ -16,19 +16,6 @@ function Copyright () {
       {new Date().getFullYear()}
     </>
   )
-}
-
-const iconStyle = {
-  width: 48,
-  height: 48,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: 'warning.main',
-  mr: 1,
-  '&:hover': {
-    bgcolor: 'warning.dark'
-  }
 }
 
 const LANGUAGES = [
@@ -58,20 +45,6 @@ export default function AppFooter () {
               spacing={2}
               sx={{ height: 120 }}
             >
-              <Grid item sx={{ display: 'flex' }}>
-                <Box component='a' href='https://mui.com/' sx={iconStyle}>
-                  <img
-                    src='/static/themes/onepirate/appFooterFacebook.png'
-                    alt='Facebook'
-                  />
-                </Box>
-                <Box component='a' href='https://twitter.com/MUI_hq' sx={iconStyle}>
-                  <img
-                    src='/static/themes/onepirate/appFooterTwitter.png'
-                    alt='Twitter'
-                  />
-                </Box>
-              </Grid>
               <Grid item>
                 <Copyright />
               </Grid>
@@ -83,10 +56,10 @@ export default function AppFooter () {
             </Typography>
             <Box component='ul' sx={{ m: 0, listStyle: 'none', p: 0 }}>
               <Box component='li' sx={{ py: 0.5 }}>
-                <Link href='/premium-themes/onepirate/terms/'>Terms</Link>
+                <Link href='/terms'>Terms</Link>
               </Box>
               <Box component='li' sx={{ py: 0.5 }}>
-                <Link href='/premium-themes/onepirate/privacy/'>Privacy</Link>
+                <Link href='/privacy/'>Privacy</Link>
               </Box>
             </Box>
           </Grid>
