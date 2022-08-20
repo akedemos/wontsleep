@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+const path = require('path')
 
 module.exports = {
   /* Your site config here */
@@ -23,7 +24,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/assets/images`
+        path: path.join(__dirname, '/src/assets/images')
       }
     },
     'gatsby-plugin-material-ui',
@@ -35,8 +36,8 @@ module.exports = {
         fonts: [
           // `roboto slab\:300,400,400i,500,600,700,800,900`,
           // `roboto\::300,400,400i,500,600,700,800,900`,
-          'roboto condensed\::300,400,400i,500,600,700,800,900',
-          'work sans\::300,400,400i,500,600,700,800,900'
+          'roboto condensed:300,400,400i,500,600,700,800,900',
+          'work sans:300,400,400i,500,600,700,800,900'
           // you can also specify font weights and styles
         ],
         display: 'swap',
