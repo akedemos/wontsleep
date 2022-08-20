@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@mui/material/styles'
+import { withStyles } from '@mui/styles'
 import Grid from '@mui/material/Grid'
 import Hidden from '@mui/material/Hidden'
 import Container from '@mui/material/Container'
@@ -117,7 +117,7 @@ function ProductCTA (props) {
         message='We will send you our best offers, once a week.'
       />
     </Container>
-  );
+  )
 }
 
 ProductCTA.propTypes = {

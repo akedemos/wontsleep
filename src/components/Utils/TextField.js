@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import PropTypes from 'prop-types'
-import { withStyles } from '@mui/material/styles'
+import { withStyles } from '@mui/styles'
 import MuiTextField from '@mui/material/TextField'
 import { capitalize } from '@mui/material/utils'
 

@@ -1,4 +1,4 @@
-import { withStyles } from '@mui/material/styles'
+import { withStyles } from '@mui/styles'
 import Button from '@mui/material/Button'
 
 export default withStyles(theme => ({

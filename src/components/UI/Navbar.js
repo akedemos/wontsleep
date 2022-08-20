@@ -1,93 +1,93 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import MenuIcon from '@mui/icons-material/Menu'
+import { useTheme } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
-import { useTheme, makeStyles } from '@mui/material/styles'
-import Toolbar from '@mui/material/Toolbar'
-import Tabs from '@mui/material/Tabs'
-import Tab from '@mui/material/Tab'
 import CssBaseline from '@mui/material/CssBaseline'
+import IconButton from '@mui/material/IconButton'
+import MuiLink from '@mui/material/Link'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
-import MuiLink from '@mui/material/Link'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
-import MenuIcon from '@mui/icons-material/Menu'
-import IconButton from '@mui/material/IconButton'
+import Tab from '@mui/material/Tab'
+import Tabs from '@mui/material/Tabs'
+import Toolbar from '@mui/material/Toolbar'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { Link } from 'gatsby'
+import React from 'react'
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    color: theme.palette.common.white
-  },
-  title: {
-    fontSize: '1.4rem'
-  },
-  toolbarMargin: {
-    ...theme.mixins.toolbar,
-    marginBottom: '3em',
-    [theme.breakpoints.down('xl')]: {
-      marginBottom: '2em'
-    },
-    [theme.breakpoints.down('md')]: {
-      marginBottom: '2.25em'
-    }
-  },
-  left: {
-    flex: 1
-  },
-  right: {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'flex-end'
-  },
-  tabContainer: {
-    marginLeft: 'auto',
-    marginRight: '.5em'
-  },
-  drawerIconCtr: {
-    marginLeft: 'auto'
-  },
-  tab: {
-    minWidth: 10,
-    fontSize: '1rem',
-    opacity: 1,
-    '& .MuiTab-Root': {
-      minWidth: 10
-    }
-  },
-  tabRoot: {
-    minWidth: 10
-  },
-  tabSecondary: {
-    fontSize: '1rem',
-    color: theme.palette.secondary.main
-  },
-  drawer: {
-    backgroundColor: theme.palette.primary.main,
-    ...theme.typography.h6
-  },
-  drawerItem: {
-    color: theme.palette.secondary.light,
-    textTransform: 'uppercase',
-    fontSize: '1rem',
-    fontWeight: 500,
-    opacity: 0.9,
-    padding: '.25em 1em'
-  },
-  drawerItemSecondary: {
-    color: theme.palette.secondary.main,
-    textTransform: 'uppercase',
-    fontSize: '1rem',
-    fontWeight: 900,
-    opacity: 0.95,
-    padding: '.25em 1em'
-  }
-}))
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     color: theme.palette.common.white
+//   },
+//   title: {
+//     fontSize: '1.4rem'
+//   },
+//   toolbarMargin: {
+//     ...theme.mixins.toolbar,
+//     marginBottom: '3em',
+//     [theme.breakpoints.down('xl')]: {
+//       marginBottom: '2em'
+//     },
+//     [theme.breakpoints.down('lg')]: {
+//       marginBottom: '2.25em'
+//     }
+//   },
+//   left: {
+//     flex: 1
+//   },
+//   right: {
+//     flex: 1,
+//     display: 'flex',
+//     justifyContent: 'flex-end'
+//   },
+//   tabContainer: {
+//     marginLeft: 'auto',
+//     marginRight: '.5em'
+//   },
+//   drawerIconCtr: {
+//     marginLeft: 'auto'
+//   },
+//   tab: {
+//     minWidth: 10,
+//     fontSize: '1rem',
+//     opacity: 1,
+//     '& .MuiTab-Root': {
+//       minWidth: 10
+//     }
+//   },
+//   tabRoot: {
+//     minWidth: 10
+//   },
+//   tabSecondary: {
+//     fontSize: '1rem',
+//     color: theme.palette.secondary.main
+//   },
+//   drawer: {
+//     backgroundColor: theme.palette.primary.main,
+//     ...theme.typography.h6
+//   },
+//   drawerItem: {
+//     color: theme.palette.secondary.light,
+//     textTransform: 'uppercase',
+//     fontSize: '1rem',
+//     fontWeight: 500,
+//     opacity: 0.9,
+//     padding: '.25em 1em'
+//   },
+//   drawerItemSecondary: {
+//     color: theme.palette.secondary.main,
+//     textTransform: 'uppercase',
+//     fontSize: '1rem',
+//     fontWeight: 900,
+//     opacity: 0.95,
+//     padding: '.25em 1em'
+//   }
+// }))
 
 export default function Navbar () {
-  const classes = useStyles()
+  const classes = {}
   const theme = useTheme()
-  const matchesXS = useMediaQuery(theme.breakpoints.down('md'))
+  const matchesXS = useMediaQuery(theme.breakpoints.down('lg'))
   const iOS =
     typeof navigator !== 'undefined' &&
     /iPad|iPhone|iPod/.test(navigator.userAgent)
@@ -149,7 +149,7 @@ export default function Navbar () {
           disableRipple
           size='large'
         >
-          <MenuIcon style={{ color: theme.palette.secondary.light }} />
+          <MenuIcon sx={{ color: 'secondary.light' }} />
         </IconButton>
       </div>
     </>

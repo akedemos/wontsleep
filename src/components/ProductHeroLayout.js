@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
-import { withStyles } from '@mui/material/styles'
+import { withStyles } from '@mui/styles'
 import Container from '@mui/material/Container'
 import productHeroWonder from '../assets/images/productHeroWonder.png'
 import productHeroArrowDown from '../assets/images/productHeroArrowDown.png'

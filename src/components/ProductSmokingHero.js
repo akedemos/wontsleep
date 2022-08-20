@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
-import { withStyles } from '@mui/material/styles'
+import { withStyles } from '@mui/styles'
 import Typography from './Utils/Typography'
 import ProductBuoy from '../assets/images/productBuoy.svg'
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { makeStyles } from '@mui/material/styles'
 import Grid from '@mui/material/Grid'
 import MuiLink from '@mui/material/Link'
 import Container from '@mui/material/Container'
@@ -21,49 +20,6 @@ function Copyright () {
   )
 }
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    backgroundColor: theme.palette.secondary.light
-  },
-  container: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(8),
-    display: 'flex'
-  },
-  iconsWrapper: {
-    height: 120
-  },
-  icons: {
-    display: 'flex'
-  },
-  icon: {
-    width: 48,
-    height: 48,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: theme.palette.warning.main,
-    marginRight: theme.spacing(1),
-    '&:hover': {
-      backgroundColor: theme.palette.warning.dark
-    }
-  },
-  list: {
-    margin: 0,
-    listStyle: 'none',
-    padding: 0
-  },
-  listItem: {
-    paddingTop: theme.spacing(0.5),
-    paddingBottom: theme.spacing(0.5)
-  },
-  language: {
-    marginTop: theme.spacing(1),
-    width: 150
-  }
-}))
-
 const LANGUAGES = [
   {
     code: 'en-US',
@@ -76,27 +32,65 @@ const LANGUAGES = [
 ]
 
 export default function Footer () {
-  const classes = useStyles()
-
   return (
-    <Typography component='footer' className={classes.root}>
-      <Container className={classes.container}>
+    <Typography
+      component='footer' sx={{
+        display: 'flex',
+        bgcolor: 'secondary.light'
+      }}
+    >
+      <Container sx={{
+        marginTop: 8,
+        marginBottom: 8,
+        display: 'flex'
+      }}
+      >
         <Grid container spacing={5}>
           <Grid item xs={6} sm={4} md={3}>
             <Grid
               container
               direction='column'
               justifyContent='flex-end'
-              className={classes.iconsWrapper}
+              sx={{
+                height: 120
+              }}
               spacing={2}
             >
-              <Grid item className={classes.icons}>
-                <a href='https://snappywebdesign.net/' className={classes.icon}>
+              <Grid
+                item sx={{
+                  display: 'flex'
+                }}
+              >
+                <a
+                  href='/' sx={{
+                    width: 48,
+                    height: 48,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    bgcolor: 'warning.main',
+                    mr: 1,
+                    '&:hover': {
+                      bgcolor: 'warning.dark'
+                    }
+                  }}
+                >
                   <img src={FacebookIcon} alt='Facebook' />
                 </a>
                 <a
-                  href='https://twitter.com/snappy_web'
-                  className={classes.icon}
+                  href='/'
+                  sx={{
+                    width: 48,
+                    height: 48,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    bgcolor: 'warning.main',
+                    mr: 1,
+                    '&:hover': {
+                      bgcolor: 'warning.dark'
+                    }
+                  }}
                 >
                   <img src={TwitterIcon} alt='Twitter' />
                 </a>
@@ -110,13 +104,26 @@ export default function Footer () {
             <Typography variant='h6' marked='left' gutterBottom>
               Legal
             </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
+            <ul sx={{
+              margin: 0,
+              listStyle: 'none',
+              padding: 0
+            }}
+            >
+              <li sx={{
+                pt: 0.5,
+                pb: 0.5
+              }}
+              >
                 <MuiLink component={Link} to='/terms'>
                   Terms
                 </MuiLink>
               </li>
-              <li className={classes.listItem}>
+              <li sx={{
+                pt: 0.5,
+                pb: 0.5
+              }}
+              >
                 <MuiLink component={Link} to='/privacy'>
                   Privacy
                 </MuiLink>
@@ -132,7 +139,10 @@ export default function Footer () {
               SelectProps={{
                 native: true
               }}
-              className={classes.language}
+              sx={{
+                mt: 1,
+                width: 150
+              }}
             >
               {LANGUAGES.map(language => (
                 <option value={language.code} key={language.code}>

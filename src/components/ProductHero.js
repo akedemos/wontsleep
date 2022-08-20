@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { withStyles } from '@mui/material/styles'
+import { withStyles } from '@mui/styles'
 import Button from './Utils/Button'
 import Typography from './Utils/Typography'
 import ProductHeroLayout from './ProductHeroLayout'

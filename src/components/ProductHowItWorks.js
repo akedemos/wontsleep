@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { withStyles } from '@mui/material/styles'
+import { withStyles } from '@mui/styles'
 import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 import Button from './Utils/Button'

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
-import { withStyles } from '@mui/material/styles'
+import { withStyles } from '@mui/styles'
 import Paper from './Utils/Paper'
 
 const styles = theme => ({
