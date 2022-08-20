@@ -100,7 +100,7 @@ function ProductCTA (props) {
           </div>
         </Grid>
         <Grid item xs={12} md={6} className={classes.imagesWrapper}>
-          <Hidden mdDown>
+          <Hidden lgDown>
             {/* @ TODO - REPLACE IMAGE DOTS */}
             {/* <div className={classes.imageDots} />  */}
             <img
@@ -117,7 +117,7 @@ function ProductCTA (props) {
         message='We will send you our best offers, once a week.'
       />
     </Container>
-  )
+  );
 }
 
 ProductCTA.propTypes = {

@@ -25,10 +25,10 @@ const useStyles = makeStyles(theme => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: '3em',
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('xl')]: {
       marginBottom: '2em'
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginBottom: '2.25em'
     }
   },
@@ -87,7 +87,7 @@ const useStyles = makeStyles(theme => ({
 export default function Navbar () {
   const classes = useStyles()
   const theme = useTheme()
-  const matchesXS = useMediaQuery(theme.breakpoints.down('sm'))
+  const matchesXS = useMediaQuery(theme.breakpoints.down('md'))
   const iOS =
     typeof navigator !== 'undefined' &&
     /iPad|iPhone|iPod/.test(navigator.userAgent)

@@ -21,7 +21,7 @@ const styles = theme => ({
     padding: 0,
     borderRadius: 0,
     height: '40vh',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       width: '100% !important',
       height: 100
     },
