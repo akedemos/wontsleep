@@ -1,95 +1,95 @@
-import React from "react"
-import { Link } from "gatsby"
-import AppBar from "@mui/material/AppBar"
-import { useTheme, makeStyles } from "@mui/material/styles"
-import Toolbar from "@mui/material/Toolbar"
-import Tabs from "@mui/material/Tabs"
-import Tab from "@mui/material/Tab"
-import CssBaseline from "@mui/material/CssBaseline"
-import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemText from "@mui/material/ListItemText"
-import MuiLink from "@mui/material/Link"
-import SwipeableDrawer from "@mui/material/SwipeableDrawer"
-import MenuIcon from "@mui/icons-material/Menu"
-import IconButton from "@mui/material/IconButton"
-import useMediaQuery from "@mui/material/useMediaQuery"
+import React from 'react'
+import { Link } from 'gatsby'
+import AppBar from '@mui/material/AppBar'
+import { useTheme, makeStyles } from '@mui/material/styles'
+import Toolbar from '@mui/material/Toolbar'
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import CssBaseline from '@mui/material/CssBaseline'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
+import MuiLink from '@mui/material/Link'
+import SwipeableDrawer from '@mui/material/SwipeableDrawer'
+import MenuIcon from '@mui/icons-material/Menu'
+import IconButton from '@mui/material/IconButton'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    color: theme.palette.common.white,
+    color: theme.palette.common.white
   },
   title: {
-    fontSize: "1.4rem",
+    fontSize: '1.4rem'
   },
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "3em",
-    [theme.breakpoints.down("md")]: {
-      marginBottom: "2em",
+    marginBottom: '3em',
+    [theme.breakpoints.down('md')]: {
+      marginBottom: '2em'
     },
-    [theme.breakpoints.down("xs")]: {
-      marginBottom: "2.25em",
-    },
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: '2.25em'
+    }
   },
   left: {
-    flex: 1,
+    flex: 1
   },
   right: {
     flex: 1,
-    display: "flex",
-    justifyContent: "flex-end",
+    display: 'flex',
+    justifyContent: 'flex-end'
   },
   tabContainer: {
-    marginLeft: "auto",
-    marginRight: ".5em",
+    marginLeft: 'auto',
+    marginRight: '.5em'
   },
   drawerIconCtr: {
-    marginLeft: "auto",
+    marginLeft: 'auto'
   },
   tab: {
     minWidth: 10,
-    fontSize: "1rem",
+    fontSize: '1rem',
     opacity: 1,
-    "& .MuiTab-Root": {
-      minWidth: 10,
-    },
+    '& .MuiTab-Root': {
+      minWidth: 10
+    }
   },
   tabRoot: {
-    minWidth: 10,
+    minWidth: 10
   },
   tabSecondary: {
-    fontSize: "1rem",
-    color: theme.palette.secondary.main,
+    fontSize: '1rem',
+    color: theme.palette.secondary.main
   },
   drawer: {
     backgroundColor: theme.palette.primary.main,
-    ...theme.typography.h6,
+    ...theme.typography.h6
   },
   drawerItem: {
     color: theme.palette.secondary.light,
-    textTransform: "uppercase",
-    fontSize: "1rem",
+    textTransform: 'uppercase',
+    fontSize: '1rem',
     fontWeight: 500,
     opacity: 0.9,
-    padding: ".25em 1em",
+    padding: '.25em 1em'
   },
   drawerItemSecondary: {
     color: theme.palette.secondary.main,
-    textTransform: "uppercase",
-    fontSize: "1rem",
+    textTransform: 'uppercase',
+    fontSize: '1rem',
     fontWeight: 900,
     opacity: 0.95,
-    padding: ".25em 1em",
-  },
+    padding: '.25em 1em'
+  }
 }))
 
-export default function Navbar() {
+export default function Navbar () {
   const classes = useStyles()
   const theme = useTheme()
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"))
+  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'))
   const iOS =
-    typeof navigator !== "undefined" &&
+    typeof navigator !== 'undefined' &&
     /iPad|iPhone|iPod/.test(navigator.userAgent)
 
   const [openDrawer, setOpenDrawer] = React.useState(false)
@@ -103,7 +103,7 @@ export default function Navbar() {
         onClose={() => setOpenDrawer(false)}
         onOpen={() => setOpenDrawer(true)}
         classes={{
-          paper: classes.drawer,
+          paper: classes.drawer
         }}
       >
         <List disablePadding>
@@ -111,8 +111,8 @@ export default function Navbar() {
             divider
             button
             component={Link}
-            to="/login"
-            title="Link to Login Page"
+            to='/login'
+            title='Link to Login Page'
             onClick={() => {
               setOpenDrawer(false)
             }}
@@ -125,9 +125,9 @@ export default function Navbar() {
             divider
             button
             component={Link}
-            to="/register"
-            title="Link to Register Page"
-            style={{ display: "block" }}
+            to='/register'
+            title='Link to Register Page'
+            style={{ display: 'block' }}
             onClick={() => {
               setOpenDrawer(false)
             }}
@@ -143,7 +143,7 @@ export default function Navbar() {
       </SwipeableDrawer>
       <div className={classes.right}>
         <IconButton
-          aria-label="navigation menu"
+          aria-label='navigation menu'
           className={classes.drawerIconCtr}
           onClick={() => setOpenDrawer(!openDrawer)}
           disableRipple
@@ -162,19 +162,19 @@ export default function Navbar() {
           className={classes.tabContainer}
           TabIndicatorProps={{
             style: {
-              display: "none",
-            },
+              display: 'none'
+            }
           }}
         >
           <Tab
             className={`${classes.tab}`}
             component={Link}
-            to="/login"
-            label="Sign In"
-            aria-label="Sign In Button"
-            variant="h6"
-            underline="none"
-            color="inherit"
+            to='/login'
+            label='Sign In'
+            aria-label='Sign In Button'
+            variant='h6'
+            underline='none'
+            color='inherit'
             disableRipple
             classes={{ root: classes.tabRoot }}
           />
@@ -182,11 +182,11 @@ export default function Navbar() {
             className={`${classes.tab}, ${classes.tabSecondary}`}
             classes={{ root: classes.tabRoot }}
             component={Link}
-            to="/register"
-            label="Sign Up"
-            aria-label="Sign Up Button"
-            variant="h6"
-            underline="none"
+            to='/register'
+            label='Sign Up'
+            aria-label='Sign Up Button'
+            variant='h6'
+            underline='none'
             disableRipple
           />
         </Tabs>
@@ -202,10 +202,10 @@ export default function Navbar() {
           <div className={classes.left} />
           <MuiLink
             component={Link}
-            to="/"
-            color="inherit"
-            variant="h6"
-            underline="none"
+            to='/'
+            color='inherit'
+            variant='h6'
+            underline='none'
             className={classes.title}
           >
             OneSnappy

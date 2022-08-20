@@ -1,62 +1,62 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { withStyles } from "@mui/material/styles"
-import Grid from "@mui/material/Grid"
-import Container from "@mui/material/Container"
-import Button from "./Utils/Button"
-import Typography from "./Utils/Typography"
-import ProductCurvyLines from "../assets/images/productCurvyLines.png"
-import ProductHowItWorks1 from "../assets/images/productHowItWorks1.svg"
-import ProductHowItWorks2 from "../assets/images/productHowItWorks2.svg"
-import ProductHowItWorks3 from "../assets/images/productHowItWorks3.svg"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import { withStyles } from '@mui/material/styles'
+import Grid from '@mui/material/Grid'
+import Container from '@mui/material/Container'
+import Button from './Utils/Button'
+import Typography from './Utils/Typography'
+import ProductCurvyLines from '../assets/images/productCurvyLines.png'
+import ProductHowItWorks1 from '../assets/images/productHowItWorks1.svg'
+import ProductHowItWorks2 from '../assets/images/productHowItWorks2.svg'
+import ProductHowItWorks3 from '../assets/images/productHowItWorks3.svg'
 
 const styles = theme => ({
   root: {
-    display: "flex",
+    display: 'flex',
     backgroundColor: theme.palette.secondary.light,
-    overflow: "hidden",
+    overflow: 'hidden'
   },
   container: {
     marginTop: theme.spacing(10),
     marginBottom: theme.spacing(15),
-    position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   item: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: theme.spacing(0, 5),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: theme.spacing(0, 5)
   },
   title: {
-    marginBottom: theme.spacing(14),
+    marginBottom: theme.spacing(14)
   },
   number: {
     fontSize: 24,
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.secondary.main,
-    fontWeight: theme.typography.fontWeightMedium,
+    fontWeight: theme.typography.fontWeightMedium
   },
   image: {
     height: 55,
     marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(4)
   },
   curvyLines: {
-    pointerEvents: "none",
-    position: "absolute",
+    pointerEvents: 'none',
+    position: 'absolute',
     top: -180,
-    opacity: 0.7,
+    opacity: 0.7
   },
   button: {
-    marginTop: theme.spacing(8),
-  },
+    marginTop: theme.spacing(8)
+  }
 })
 
-function ProductHowItWorks(props) {
+function ProductHowItWorks (props) {
   const { classes } = props
 
   return (
@@ -65,13 +65,13 @@ function ProductHowItWorks(props) {
         <img
           src={ProductCurvyLines}
           className={classes.curvyLines}
-          alt="curvy lines"
+          alt='curvy lines'
         />
         <Typography
-          variant="h4"
-          marked="center"
+          variant='h4'
+          marked='center'
           className={classes.title}
-          component="h2"
+          component='h2'
         >
           How it works
         </Typography>
@@ -82,10 +82,10 @@ function ProductHowItWorks(props) {
                 <div className={classes.number}>1.</div>
                 <img
                   src={ProductHowItWorks1}
-                  alt="suitcase"
+                  alt='suitcase'
                   className={classes.image}
                 />
-                <Typography variant="h5" align="center">
+                <Typography variant='h5' align='center'>
                   Appointment every Wednesday 9am.
                 </Typography>
               </div>
@@ -95,10 +95,10 @@ function ProductHowItWorks(props) {
                 <div className={classes.number}>2.</div>
                 <img
                   src={ProductHowItWorks2}
-                  alt="graph"
+                  alt='graph'
                   className={classes.image}
                 />
-                <Typography variant="h5" align="center">
+                <Typography variant='h5' align='center'>
                   First come, first served. Our offers are in limited
                   quantities, so be quick.
                 </Typography>
@@ -109,24 +109,24 @@ function ProductHowItWorks(props) {
                 <div className={classes.number}>3.</div>
                 <img
                   src={ProductHowItWorks3}
-                  alt="clock"
+                  alt='clock'
                   className={classes.image}
                 />
-                <Typography variant="h5" align="center">
-                  {"New offers every week. New experiences, new surprises. "}
-                  {"Your Sundays will no longer be alike."}
+                <Typography variant='h5' align='center'>
+                  {'New offers every week. New experiences, new surprises. '}
+                  Your Sundays will no longer be alike.
                 </Typography>
               </div>
             </Grid>
           </Grid>
         </div>
         <Button
-          color="secondary"
-          size="large"
-          variant="contained"
+          color='secondary'
+          size='large'
+          variant='contained'
           className={classes.button}
           component={Link}
-          to="/register"
+          to='/register'
         >
           Get started
         </Button>
@@ -136,7 +136,7 @@ function ProductHowItWorks(props) {
 }
 
 ProductHowItWorks.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(ProductHowItWorks)

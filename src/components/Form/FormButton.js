@@ -1,15 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
-import defer from "./defer"
-import Button from "../Utils/Button"
+import React from 'react'
+import PropTypes from 'prop-types'
+import defer from './defer'
+import Button from '../Utils/Button'
 
-function FormButton(props) {
+function FormButton (props) {
   const { disabled, mounted, ...others } = props
   return (
     <Button
       disabled={!mounted || disabled}
-      type="submit"
-      variant="contained"
+      type='submit'
+      variant='contained'
       {...others}
     />
   )
@@ -17,7 +17,7 @@ function FormButton(props) {
 
 FormButton.propTypes = {
   disabled: PropTypes.bool,
-  mounted: PropTypes.bool,
+  mounted: PropTypes.bool
 }
 
 export default defer(FormButton)

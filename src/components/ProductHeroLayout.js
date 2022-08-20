@@ -1,72 +1,72 @@
-import React from "react"
-import PropTypes from "prop-types"
-import clsx from "clsx"
-import { withStyles } from "@mui/material/styles"
-import Container from "@mui/material/Container"
-import productHeroWonder from "../assets/images/productHeroWonder.png"
-import productHeroArrowDown from "../assets/images/productHeroArrowDown.png"
+import React from 'react'
+import PropTypes from 'prop-types'
+import clsx from 'clsx'
+import { withStyles } from '@mui/material/styles'
+import Container from '@mui/material/Container'
+import productHeroWonder from '../assets/images/productHeroWonder.png'
+import productHeroArrowDown from '../assets/images/productHeroArrowDown.png'
 
 const styles = theme => ({
   root: {
     color: theme.palette.common.white,
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
-    [theme.breakpoints.up("sm")]: {
-      height: "87vh",
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    [theme.breakpoints.up('sm')]: {
+      height: '87vh',
       minHeight: 500,
-      maxHeight: 1300,
-    },
+      maxHeight: 1300
+    }
   },
   container: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(14),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   backdrop: {
-    position: "absolute",
+    position: 'absolute',
     left: 0,
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: "#002e48",
+    backgroundColor: '#002e48',
     opacity: 0.5,
-    zIndex: -1,
+    zIndex: -1
   },
   background: {
-    position: "absolute",
+    position: 'absolute',
     left: 0,
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    zIndex: -2,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    zIndex: -2
   },
   arrowDown: {
-    position: "absolute",
-    bottom: theme.spacing(4),
-  },
+    position: 'absolute',
+    bottom: theme.spacing(4)
+  }
 })
 
-function ProductHeroLayout(props) {
+function ProductHeroLayout (props) {
   const { backgroundClassName, children, classes } = props
 
   return (
     <section className={classes.root}>
       <Container className={classes.container}>
-        <img src={productHeroWonder} alt="wonder" width="147" height="80" />
+        <img src={productHeroWonder} alt='wonder' width='147' height='80' />
         {children}
         <div className={classes.backdrop} />
         <div className={clsx(classes.background, backgroundClassName)} />
         <img
           className={classes.arrowDown}
           src={productHeroArrowDown}
-          height="16"
-          width="12"
-          alt="arrow down"
+          height='16'
+          width='12'
+          alt='arrow down'
         />
       </Container>
     </section>
@@ -76,7 +76,7 @@ function ProductHeroLayout(props) {
 ProductHeroLayout.propTypes = {
   backgroundClassName: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(ProductHeroLayout)

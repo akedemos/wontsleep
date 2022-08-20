@@ -1,8 +1,8 @@
-import React from "react"
-import PropTypes from "prop-types"
-import TextField from "../Utils/TextField"
+import React from 'react'
+import PropTypes from 'prop-types'
+import TextField from '../Utils/TextField'
 
-function RFTextField(props) {
+function RFTextField (props) {
   const {
     autoComplete,
     input,
@@ -18,11 +18,11 @@ function RFTextField(props) {
       {...other}
       InputProps={{
         inputProps: {
-          autoComplete,
+          autoComplete
         },
-        ...InputProps,
+        ...InputProps
       }}
-      helperText={touched ? error || submitError : ""}
+      helperText={touched ? error || submitError : ''}
     />
   )
 }
@@ -33,8 +33,8 @@ RFTextField.propTypes = {
   InputProps: PropTypes.object,
   meta: PropTypes.shape({
     error: PropTypes.string,
-    touched: PropTypes.bool.isRequired,
-  }).isRequired,
+    touched: PropTypes.bool.isRequired
+  }).isRequired
 }
 
 export default RFTextField

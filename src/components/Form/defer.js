@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-export default function defer(Component) {
+export default function defer (Component) {
   const Defer = props => {
     const [mounted, setMounted] = React.useState(false)
 

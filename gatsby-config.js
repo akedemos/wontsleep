@@ -7,48 +7,48 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Gatsby Material-UI Starter`,
-    titleTemplate: `OneSnappy | %s`,
-    image: `default.jpg`,
-    description: `Gatsby/Material-UI Template via SnappyWebDesign.net`,
-    author: `@snappy_web`,
-    siteUrl: `https://muitemplate.netlify.app`,
+    title: 'Gatsby Material-UI Starter',
+    titleTemplate: 'OneSnappy | %s',
+    image: 'default.jpg',
+    description: 'Gatsby/Material-UI Template via SnappyWebDesign.net',
+    author: '@snappy_web',
+    siteUrl: 'https://muitemplate.netlify.app'
   },
 
   plugins: [
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
+        name: 'images',
+        path: `${__dirname}/src/assets/images`
+      }
     },
-    `gatsby-plugin-material-ui`,
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-material-ui',
+    'gatsby-plugin-react-helmet',
     {
       // resolve: `gatsby-plugin-google-fonts`,
-      resolve: `gatsby-plugin-google-fonts-with-attributes`,
+      resolve: 'gatsby-plugin-google-fonts-with-attributes',
       options: {
         fonts: [
           // `roboto slab\:300,400,400i,500,600,700,800,900`,
           // `roboto\::300,400,400i,500,600,700,800,900`,
-          `roboto condensed\::300,400,400i,500,600,700,800,900`,
-          `work sans\::300,400,400i,500,600,700,800,900`,
+          'roboto condensed\::300,400,400i,500,600,700,800,900',
+          'work sans\::300,400,400i,500,600,700,800,900'
           // you can also specify font weights and styles
         ],
-        display: "swap",
+        display: 'swap',
         attributes: {
-          rel: "preload",
-          as: "font",
+          rel: 'preload',
+          as: 'font'
           // rel: "stylesheet preload prefetch",
           // as: "style",
-        },
-      },
+        }
+      }
     },
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`,
-  ],
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt'
+  ]
 }

@@ -1,12 +1,12 @@
-import React from "react"
-import { ThemeProvider } from "@mui/material/styles"
-import "normalize.css"
+import React from 'react'
+import { ThemeProvider } from '@mui/material/styles'
+import 'normalize.css'
 
-import Theme from "./Theme"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
+import Theme from './Theme'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
-export default function Layout({ children }) {
+export default function Layout ({ children }) {
   return (
     <ThemeProvider theme={Theme}>
       <Navbar />

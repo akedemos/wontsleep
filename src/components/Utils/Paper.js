@@ -1,28 +1,28 @@
-import React from "react"
-import clsx from "clsx"
-import PropTypes from "prop-types"
-import MuiPaper from "@mui/material/Paper"
-import { capitalize } from "@mui/material/utils"
-import { withStyles } from "@mui/material/styles"
+import React from 'react'
+import clsx from 'clsx'
+import PropTypes from 'prop-types'
+import MuiPaper from '@mui/material/Paper'
+import { capitalize } from '@mui/material/utils'
+import { withStyles } from '@mui/material/styles'
 
 const styles = theme => ({
   backgroundLight: {
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.secondary.light
   },
   backgroundMain: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.secondary.main
   },
   backgroundDark: {
-    backgroundColor: theme.palette.secondary.dark,
+    backgroundColor: theme.palette.secondary.dark
   },
   padding: {
-    padding: theme.spacing(1),
-  },
+    padding: theme.spacing(1)
+  }
 })
 
-function Paper(props) {
+function Paper (props) {
   const {
-    background = "light",
+    background = 'light',
     classes,
     className,
     padding = false,
@@ -35,7 +35,7 @@ function Paper(props) {
       className={clsx(
         classes[`background${capitalize(background)}`],
         {
-          [classes.padding]: padding,
+          [classes.padding]: padding
         },
         className
       )}
@@ -45,10 +45,10 @@ function Paper(props) {
 }
 
 Paper.propTypes = {
-  background: PropTypes.oneOf(["light", "main", "dark"]),
+  background: PropTypes.oneOf(['light', 'main', 'dark']),
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,
-  padding: PropTypes.bool,
+  padding: PropTypes.bool
 }
 
 export default withStyles(styles)(Paper)
