@@ -14,8 +14,10 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.10.1",
     "final-form": "^4.20.2",
     "gatsby": "^3.6.2",
     "gatsby-plugin-google-fonts-with-attributes": "^1.0.8",
@@ -35,7 +37,8 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "standard": "^17.0.0"
   },
   "repository": {
     "type": "git",

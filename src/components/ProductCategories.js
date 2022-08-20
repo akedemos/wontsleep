@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { withStyles } from "@material-ui/core/styles"
-import ButtonBase from "@material-ui/core/ButtonBase"
-import Container from "@material-ui/core/Container"
+import { withStyles } from "@mui/material/styles"
+import ButtonBase from "@mui/material/ButtonBase"
+import Container from "@mui/material/Container"
 import Typography from "./Utils/Typography"
 
 const styles = theme => ({

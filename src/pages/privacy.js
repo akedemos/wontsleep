@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "../components/UI/Layout"
-import MuiLink from "@material-ui/core/Link"
-import Container from "@material-ui/core/Container"
-import Box from "@material-ui/core/Box"
+import MuiLink from "@mui/material/Link"
+import Container from "@mui/material/Container"
+import Box from "@mui/material/Box"
 import Typography from "../components/Utils/Typography"
 
 export default function PrivacyPage() {

@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import clsx from "clsx"
-import { withStyles } from "@material-ui/core/styles"
-import Container from "@material-ui/core/Container"
+import { withStyles } from "@mui/material/styles"
+import Container from "@mui/material/Container"
 import productHeroWonder from "../assets/images/productHeroWonder.png"
 import productHeroArrowDown from "../assets/images/productHeroArrowDown.png"
 

@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/UI/Layout"
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@mui/material/styles"
 import { Field, Form, FormSpy } from "react-final-form"
 import Typography from "../components/Utils/Typography"
 import AppForm from "../components/AppForm"
