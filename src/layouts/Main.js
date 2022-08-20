@@ -8,7 +8,6 @@ const MainLayout = ({ children }) => {
     <>
       <AppBar />
       {children}
-      <Footer />
     </>
   )
 }
