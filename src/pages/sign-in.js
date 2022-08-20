@@ -1,41 +1,27 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import * as React from 'react'
 import { Field, Form, FormSpy } from 'react-final-form'
+import Box from '@mui/material/Box'
+import Link from '@mui/material/Link'
+import Typography from '../components/Typography'
+import AppFooter from '../views/AppFooter'
+import AppAppBar from '../views/AppAppBar'
+import AppForm from '../views/AppForm'
+import { email, required } from '../form/validation'
+import RFTextField from '../form/RFTextField'
+import FormButton from '../form/FormButton'
+import FormFeedback from '../form/FormFeedback'
+import withRoot from '../withRoot'
 
-import Layout from '../components/UI/Layout'
-// import { makeStyles } from '@mui/styles'
-import MuiLink from '@mui/material/Link'
-import Typography from '../components/Utils/Typography'
-import AppForm from '../components/AppForm'
-import { email, required } from '../components/Form/validation'
-import RFTextField from '../components/Form/RFTextField'
-import FormButton from '../components/Form/FormButton'
-import FormFeedback from '../components/Form/FormFeedback'
-
-// const useStyles = makeStyles(theme => ({
-//   form: {
-//     marginTop: theme.spacing(6)
-//   },
-//   button: {
-//     marginTop: theme.spacing(3),
-//     marginBottom: theme.spacing(2)
-//   },
-//   feedback: {
-//     marginTop: theme.spacing(2)
-//   }
-// }))
-
-function LoginPage () {
-  const classes = {}
+function SignIn () {
   const [sent, setSent] = React.useState(false)
 
-  const validate = values => {
+  const validate = (values) => {
     const errors = required(['email', 'password'], values)
 
     if (!errors.email) {
-      const emailError = email(values.email, values)
+      const emailError = email(values.email)
       if (emailError) {
-        errors.email = email(values.email, values)
+        errors.email = emailError
       }
     }
 
@@ -47,7 +33,8 @@ function LoginPage () {
   }
 
   return (
-    <Layout>
+    <>
+      <AppAppBar />
       <AppForm>
         <>
           <Typography variant='h3' gutterBottom marked='center' align='center'>
@@ -55,14 +42,13 @@ function LoginPage () {
           </Typography>
           <Typography variant='body2' align='center'>
             {'Not a member yet? '}
-            <MuiLink
-              component={Link}
-              to='/register'
+            <Link
+              href='/premium-themes/onepirate/sign-up/'
               align='center'
               underline='always'
             >
               Sign Up here
-            </MuiLink>
+            </Link>
           </Typography>
         </>
         <Form
@@ -70,8 +56,8 @@ function LoginPage () {
           subscription={{ submitting: true }}
           validate={validate}
         >
-          {({ handleSubmit2, submitting }) => (
-            <form onSubmit={handleSubmit2} className={classes.form} noValidate>
+          {({ handleSubmit: handleSubmit2, submitting }) => (
+            <Box component='form' onSubmit={handleSubmit2} noValidate sx={{ mt: 6 }}>
               <Field
                 autoComplete='email'
                 autoFocus
@@ -100,14 +86,14 @@ function LoginPage () {
                 {({ submitError }) =>
                   submitError
                     ? (
-                      <FormFeedback className={classes.feedback} error>
+                      <FormFeedback error sx={{ mt: 2 }}>
                         {submitError}
                       </FormFeedback>
                       )
                     : null}
               </FormSpy>
               <FormButton
-                className={classes.button}
+                sx={{ mt: 3, mb: 2 }}
                 disabled={submitting || sent}
                 size='large'
                 color='secondary'
@@ -115,17 +101,18 @@ function LoginPage () {
               >
                 {submitting || sent ? 'In progress…' : 'Sign In'}
               </FormButton>
-            </form>
+            </Box>
           )}
         </Form>
         <Typography align='center'>
-          <MuiLink component={Link} to='/forgot-password' underline='always'>
+          <Link underline='always' href='/premium-themes/onepirate/forgot-password/'>
             Forgot password?
-          </MuiLink>
+          </Link>
         </Typography>
       </AppForm>
-    </Layout>
+      <AppFooter />
+    </>
   )
 }
 
-export default LoginPage
+export default withRoot(SignIn)

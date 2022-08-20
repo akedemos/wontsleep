@@ -1,44 +1,28 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Layout from '../components/UI/Layout'
-// import { makeStyles } from '@mui/styles'
+import * as React from 'react'
+import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import MuiLink from '@mui/material/Link'
+import Link from '@mui/material/Link'
 import { Field, Form, FormSpy } from 'react-final-form'
-import Typography from '../components/Utils/Typography'
-import AppForm from '../components/AppForm'
-import { email, required } from '../components/Form/validation'
-import RFTextField from '../components/Form/RFTextField'
-import FormButton from '../components/Form/FormButton'
-import FormFeedback from '../components/Form/FormFeedback'
+import Typography from '../components/Typography'
+import AppFooter from '../views/AppFooter'
+import AppAppBar from '../views/AppAppBar'
+import AppForm from '../views/AppForm'
+import { email, required } from '../form/validation'
+import RFTextField from '../form/RFTextField'
+import FormButton from '../form/FormButton'
+import FormFeedback from '../form/FormFeedback'
+import withRoot from '../withRoot'
 
-// const useStyles = makeStyles(theme => ({
-//   form: {
-//     marginTop: theme.spacing(6)
-//   },
-//   button: {
-//     marginTop: theme.spacing(3),
-//     marginBottom: theme.spacing(2)
-//   },
-//   feedback: {
-//     marginTop: theme.spacing(2)
-//   }
-// }))
-
-function RegisterPage () {
-  const classes = {}
+function SignUp () {
   const [sent, setSent] = React.useState(false)
 
-  const validate = values => {
-    const errors = required(
-      ['firstName', 'lastName', 'email', 'password'],
-      values
-    )
+  const validate = (values) => {
+    const errors = required(['firstName', 'lastName', 'email', 'password'], values)
 
     if (!errors.email) {
-      const emailError = email(values.email, values)
+      const emailError = email(values.email)
       if (emailError) {
-        errors.email = email(values.email, values)
+        errors.email = emailError
       }
     }
 
@@ -50,16 +34,17 @@ function RegisterPage () {
   }
 
   return (
-    <Layout>
+    <>
+      <AppAppBar />
       <AppForm>
         <>
           <Typography variant='h3' gutterBottom marked='center' align='center'>
             Sign Up
           </Typography>
           <Typography variant='body2' align='center'>
-            <MuiLink component={Link} to='/login' underline='always'>
+            <Link href='/premium-themes/onepirate/sign-in/' underline='always'>
               Already have an account?
-            </MuiLink>
+            </Link>
           </Typography>
         </>
         <Form
@@ -67,14 +52,15 @@ function RegisterPage () {
           subscription={{ submitting: true }}
           validate={validate}
         >
-          {({ handleSubmit2, submitting }) => (
-            <form onSubmit={handleSubmit2} className={classes.form} noValidate>
+          {({ handleSubmit: handleSubmit2, submitting }) => (
+            <Box component='form' onSubmit={handleSubmit2} noValidate sx={{ mt: 6 }}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <Field
                     autoFocus
                     component={RFTextField}
-                    autoComplete='fname'
+                    disabled={submitting || sent}
+                    autoComplete='given-name'
                     fullWidth
                     label='First name'
                     name='firstName'
@@ -84,7 +70,8 @@ function RegisterPage () {
                 <Grid item xs={12} sm={6}>
                   <Field
                     component={RFTextField}
-                    autoComplete='lname'
+                    disabled={submitting || sent}
+                    autoComplete='family-name'
                     fullWidth
                     label='Last name'
                     name='lastName'
@@ -108,7 +95,7 @@ function RegisterPage () {
                 disabled={submitting || sent}
                 required
                 name='password'
-                autoComplete='current-password'
+                autoComplete='new-password'
                 label='Password'
                 type='password'
                 margin='normal'
@@ -117,26 +104,27 @@ function RegisterPage () {
                 {({ submitError }) =>
                   submitError
                     ? (
-                      <FormFeedback className={classes.feedback} error>
+                      <FormFeedback error sx={{ mt: 2 }}>
                         {submitError}
                       </FormFeedback>
                       )
                     : null}
               </FormSpy>
               <FormButton
-                className={classes.button}
+                sx={{ mt: 3, mb: 2 }}
                 disabled={submitting || sent}
                 color='secondary'
                 fullWidth
               >
                 {submitting || sent ? 'In progress…' : 'Sign Up'}
               </FormButton>
-            </form>
+            </Box>
           )}
         </Form>
       </AppForm>
-    </Layout>
+      <AppFooter />
+    </>
   )
 }
 
-export default RegisterPage
+export default withRoot(SignUp)

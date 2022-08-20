@@ -1,23 +1,27 @@
-import React from 'react'
-import Layout from '../components/UI/Layout'
-import Seo from '../components/Seo'
-import ProductHero from '../components/ProductHero'
-import ProductValues from '../components/ProductValues'
-import ProductCategories from '../components/ProductCategories'
-import ProductHowItWorks from '../components/ProductHowItWorks'
-import ProductCTA from '../components/ProductCTA'
-import ProductSmokingHero from '../components/ProductSmokingHero'
+import * as React from 'react'
+import ProductCategories from '../views/ProductCategories'
+import ProductSmokingHero from '../views/ProductSmokingHero'
+import AppFooter from '../views/AppFooter'
+import ProductHero from '../views/ProductHero'
+import ProductValues from '../views/ProductValues'
+import ProductHowItWorks from '../views/ProductHowItWorks'
+import ProductCTA from '../views/ProductCTA'
+import AppAppBar from '../views/AppAppBar'
+import withRoot from '../withRoot'
 
-export default function Home () {
+function Index () {
   return (
-    <Layout>
-      <Seo title='Home' />
-      <ProductHero dynamic />
+    <>
+      <AppAppBar />
+      <ProductHero />
       <ProductValues />
       <ProductCategories />
       <ProductHowItWorks />
       <ProductCTA />
       <ProductSmokingHero />
-    </Layout>
+      <AppFooter />
+    </>
   )
 }
+
+export default withRoot(Index)

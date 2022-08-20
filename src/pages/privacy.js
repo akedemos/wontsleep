@@ -1,31 +1,28 @@
-import React from 'react'
-import Layout from '../components/UI/Layout'
-import MuiLink from '@mui/material/Link'
+import * as React from 'react'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
-import Typography from '../components/Utils/Typography'
+import Markdown from '../components/Markdown'
+import Typography from '../components/Typography'
+import AppAppBar from '../views/AppAppBar'
+import AppFooter from '../views/AppFooter'
+import withRoot from '../withRoot'
+import privacy from '../views/privacy.md'
 
-export default function PrivacyPage () {
+function Privacy () {
   return (
-    <Layout>
+    <>
+      <AppAppBar />
       <Container>
-        <Box mt={7} mb={12}>
+        <Box sx={{ mt: 7, mb: 12 }}>
           <Typography variant='h3' gutterBottom marked='center' align='center'>
             Privacy
           </Typography>
-          <Typography
-            variant='body1'
-            gutterBottom
-            align='center'
-            style={{ height: '30vh' }}
-          >
-            Theme Ported by{' '}
-            <MuiLink href='https://snappywebdesign.net'>
-              Snappy Web Design
-            </MuiLink>
-          </Typography>
+          <Markdown>{privacy}</Markdown>
         </Box>
       </Container>
-    </Layout>
+      <AppFooter />
+    </>
   )
 }
+
+export default withRoot(Privacy)
