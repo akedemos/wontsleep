@@ -49,6 +49,19 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
-    'gatsby-plugin-netlify-cms'
+    'gatsby-plugin-netlify-cms',
+    {
+      resolve: 'gatsby-plugin-firebase',
+      options: {
+        credentials: {
+          apiKey: 'AIzaSyCI-tkrWLe0it3HduYign1LgH5ffSB30LU',
+          authDomain: 'wontsleep-967aa.firebaseapp.com',
+          projectId: 'wontsleep-967aa',
+          storageBucket: 'wontsleep-967aa.appspot.com',
+          messagingSenderId: '257671066613',
+          appId: '1:257671066613:web:1477042eef75b6abec66bc'
+        }
+      }
+    }
   ]
 }
