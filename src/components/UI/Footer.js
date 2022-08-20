@@ -86,7 +86,7 @@ export default function Footer () {
             <Grid
               container
               direction='column'
-              justify='flex-end'
+              justifyContent='flex-end'
               className={classes.iconsWrapper}
               spacing={2}
             >
@@ -186,5 +186,5 @@ export default function Footer () {
         </Grid>
       </Container>
     </Typography>
-  )
+  );
 }

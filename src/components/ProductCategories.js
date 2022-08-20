@@ -21,7 +21,7 @@ const styles = theme => ({
     padding: 0,
     borderRadius: 0,
     height: '40vh',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '100% !important',
       height: 100
     },
@@ -70,7 +70,7 @@ const styles = theme => ({
   },
   imageTitle: {
     position: 'relative',
-    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px 14px`
+    padding: `${theme.spacing(2)} ${theme.spacing(4)} 14px`
   },
   imageMarked: {
     height: 3,

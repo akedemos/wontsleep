@@ -1,7 +1,7 @@
-import { createMuiTheme } from '@mui/material/styles'
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 import { green, grey, red } from '@mui/material/colors'
 
-const rawTheme = createMuiTheme({
+const rawTheme = createTheme(adaptV4Theme({
   palette: {
     primary: {
       light: '#69696a',
@@ -36,7 +36,7 @@ const rawTheme = createMuiTheme({
     fontWeightMedium: 700, // Roboto Condensed
     fontFamilySecondary: "'Roboto Condensed', sans-serif"
   }
-})
+}))
 
 const fontHeader = {
   color: rawTheme.palette.text.primary,

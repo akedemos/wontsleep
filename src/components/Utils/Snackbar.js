@@ -68,13 +68,13 @@ function Snackbar (props) {
           color='inherit'
           className={classes.close}
           onClick={onClose}
-        >
+          size="large">
           <CloseIcon />
         </IconButton>
       ]}
       {...other}
     />
-  )
+  );
 }
 
 Snackbar.propTypes = {

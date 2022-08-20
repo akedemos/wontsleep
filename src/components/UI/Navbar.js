@@ -25,10 +25,10 @@ const useStyles = makeStyles(theme => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
     marginBottom: '3em',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       marginBottom: '2em'
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       marginBottom: '2.25em'
     }
   },
@@ -87,7 +87,7 @@ const useStyles = makeStyles(theme => ({
 export default function Navbar () {
   const classes = useStyles()
   const theme = useTheme()
-  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'))
+  const matchesXS = useMediaQuery(theme.breakpoints.down('sm'))
   const iOS =
     typeof navigator !== 'undefined' &&
     /iPad|iPhone|iPod/.test(navigator.userAgent)
@@ -147,7 +147,7 @@ export default function Navbar () {
           className={classes.drawerIconCtr}
           onClick={() => setOpenDrawer(!openDrawer)}
           disableRipple
-        >
+          size="large">
           <MenuIcon style={{ color: theme.palette.secondary.light }} />
         </IconButton>
       </div>

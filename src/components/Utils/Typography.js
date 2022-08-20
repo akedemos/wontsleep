@@ -9,21 +9,21 @@ const styles = theme => ({
     height: 4,
     width: 73,
     display: 'block',
-    margin: `${theme.spacing(1)}px auto 0`,
+    margin: `${theme.spacing(1)} auto 0`,
     backgroundColor: theme.palette.secondary.main
   },
   markedH3Center: {
     height: 4,
     width: 55,
     display: 'block',
-    margin: `${theme.spacing(1)}px auto 0`,
+    margin: `${theme.spacing(1)} auto 0`,
     backgroundColor: theme.palette.secondary.main
   },
   markedH4Center: {
     height: 4,
     width: 55,
     display: 'block',
-    margin: `${theme.spacing(1)}px auto 0`,
+    margin: `${theme.spacing(1)} auto 0`,
     backgroundColor: theme.palette.secondary.main
   },
   markedH6Left: {
