@@ -69,7 +69,7 @@ function ForgotPassword () {
                       <FormFeedback error sx={{ mt: 2 }}>
                         {submitError}
                       </FormFeedback>
-                    )
+                      )
                     : null}
               </FormSpy>
               <FormButton
