@@ -41,6 +41,7 @@
     "react-final-form": "^6.5.3",
     "react-firebase-hooks": "^5.0.3",
     "react-helmet": "^6.1.0",
+    "react-images-uploading": "^3.1.7",
     "validator": "^13.6.0"
   },
   "devDependencies": {
@@ -56,6 +57,8 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "standard": {
-    "env": [ "jest" ]
+    "env": [
+      "jest"
+    ]
   }
 }
