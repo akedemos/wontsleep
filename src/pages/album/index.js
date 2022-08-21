@@ -1,9 +1,10 @@
-import { Container } from '@mui/material'
+import { Button, Container } from '@mui/material'
 import Box from '@mui/material/Box'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
+import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'
-import Typography from '../../components/Typography'
+import PageHeader from '../../components/PageHeader/PageHeader'
 import Main from '../../layouts/Main'
 
 const itemData = [
@@ -61,7 +62,15 @@ const AlbumPage = () => {
   return (
     <Main>
       <Container>
-        <Typography variant='h1'>Album</Typography>
+        <PageHeader
+          title='Album'
+          subtitle='A collection of adventures!'
+          actions={(
+            <Button component={GatsbyLink} to='./add'>
+              Add
+            </Button>
+          )}
+        />
         <Box>
           <ImageList variant='masonry' cols={3} gap={8}>
             {itemData.map((item) => (

@@ -44,6 +44,7 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
+    "plop": "^3.1.1",
     "prettier": "^2.7.1",
     "standard": "^17.0.0"
   },
@@ -54,5 +55,7 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
-  "standard":{  }
+  "standard": {
+    "env": [ "jest" ]
+  }
 }
